@@ -55,4 +55,4 @@ RUN chmod 0644 /etc/cron.d/autoupdate && \
 EXPOSE 80
 
 # Update and start cron daemon + lighttpd
-CMD update-page && cron && lighttpd -D -f /etc/lighttpd/lighttpd.conf
+CMD update-page && cron && lighttpd -D -f /planetplanet/lighttpd.conf
