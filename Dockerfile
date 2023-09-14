@@ -7,14 +7,14 @@ ENV PLANET_VERSION=2.0 DEBIAN_FRONTEND=noninteractive TERM=dumb
 RUN apt-get update
 
 # Install required packages
-RUN apt-get install -y python2.7-minimal python-bsddb3 curl bzip2 lighttpd cron
+RUN apt-get install -y python2.7-minimal python3-minimal python3-bsddb3 curl bzip2 lighttpd cron unzip
 
 # Download planetplanet
 RUN mkdir /planetplanet && \
-    curl http://www.planetplanet.org/download/planet-$PLANET_VERSION.tar.bz2 \
-         -o /tmp/planetplanet.tar.bz2 && \
-    tar xfv /tmp/planetplanet.tar.bz2 --strip 1 -C /planetplanet && \
-    rm -rfv /tmp/planetplanet.tar.bz2 && \
+    curl -k https://codeload.github.com/lkdtr/gezegen/zip/refs/heads/master \
+         -o /tmp/planetplanet.zip && \
+    unzip /tmp/planetplanet.zip -d /planetplanet && \
+    rm -rfv /tmp/planetplanet.zip && \
     mkdir -p /planetplanet/output /planetplanet/cache /planetplanet/myplanet && \
     rm -rf /var/www/html && ln -s /planetplanet/output /var/www/html
 
