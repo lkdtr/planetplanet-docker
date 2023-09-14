@@ -29,6 +29,9 @@ RUN mkdir /planetplanet && \
     rm -rf /var/www/html && ln -s /planetplanet/output /var/www/html
 
 # Add update script
+ADD lighttpd.conf /etc/lighttpd/lighttpd.conf
+
+# Add update script
 ADD update-page.sh /usr/bin/update-page
 
 # Add crontab
@@ -55,4 +58,4 @@ RUN chmod 0644 /etc/cron.d/autoupdate && \
 EXPOSE 80
 
 # Update and start cron daemon + lighttpd
-CMD update-page && cron && lighttpd -D -f /planetplanet/lighttpd.conf
+CMD update-page && cron && lighttpd -D -f /etc/lighttpd/lighttpd.conf
