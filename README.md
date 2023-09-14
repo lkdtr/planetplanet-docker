@@ -20,4 +20,4 @@ and templates located inside the `myplanet` folder and start it by running:
 If you don't have Docker compose, your planet folder containing the templates and
 config as a volume, like this:
 
-`docker run -d --volume=<myplanet location>:/planetplanet/myplanet yukiisbored/planetplanet`
+`docker run -d --volume=<myplanet location>:/planetplanet/myplanet bmericc/planetplanet`
