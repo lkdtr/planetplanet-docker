@@ -9,13 +9,23 @@ RUN apt-get update
 # Install required packages
 RUN apt-get install -y python2.7-minimal python3-minimal python3-bsddb3 curl bzip2 lighttpd cron unzip
 
+# locale
+RUN apt-get update && \
+    apt-get install -y locales && \
+    sed -i -e 's/# tr_TR.UTF-8 UTF-8/tr_TR.UTF-8 UTF-8/' /etc/locale.gen && \
+    dpkg-reconfigure --frontend=noninteractive locales
+
+ENV LANG tr_TR.UTF-8
+ENV LC_ALL tr_TR.UTF-8
+
 # Download planetplanet
 RUN mkdir /planetplanet && \
     curl -k https://codeload.github.com/bmericc/planetplanet/tar.gz/refs/tags/2.0 \
          -o /tmp/planetplanet.tar.gz && \
     tar xfzv /tmp/planetplanet.tar.gz --strip 1 -C /planetplanet && \
     rm -rfv /tmp/planetplanet.tar.gz && \
-    mkdir -p /planetplanet/output /planetplanet/cache /planetplanet/gezegen && \
+    mkdir -p /planetplanet/gezegen /planetplanet/gezegen-lkd /planetplanet/gezegen-topluluk /planetplanet/gezegen-kisisel /planetplanet/gezegen-planet && \
+    mkdir -p /planetplanet/output /planetplanet/cache && \
     rm -rf /var/www/html && ln -s /planetplanet/output /var/www/html
 
 # Add update script
