@@ -3,6 +3,6 @@ services:
   app:
     build: .
     volumes:
-      - './myplanet:/planetplanet/myplanet'
+      - './gezegen:/planetplanet/gezegen'
     ports:
       - '8090:80'
