@@ -69,10 +69,7 @@
 		
 <div id="gezegen-sites">
 <ul>
-	<li class="home"><a href="http://gezegen.linux.org.tr/" title="Gezegen">Gezegen</a><a href="http://haber.linux.org.tr" title="Linux Haber">Linux Haber</a></li>
-	<li><a href="http://gezegen.linux.org.tr/kisisel/" title="Kişisel Günlükler">Kişisel Günlükler</a></li>
-	<li><a href="http://gezegen.linux.org.tr/lkd/" title="LKD Günlükleri">LKD Günlükleri</a></li>
-	<li><a href="http://gezegen.linux.org.tr/topluluk/" title="Topluluk Günlükleri">Topluluk Günlükleri</a></li>
+	<li class="home"><a href="http://gezegen.linux.org.tr/" title="Gezegen">Gezegen</a>	
 	<li><a href="http://planet.linux.org.tr/" title="İngilizce Günlükler">İngilizce Günlükler</a></li>
 </div> <!-- /gezegen-sites -->
 
@@ -86,11 +83,6 @@
 				</a>
 			</div>
 		</div>
-
-		<div id="hdr" align="center">
-			<a href="http://occupygezipics.tumblr.com/"><img src="images/Black_Ribbon.png" /></a>
-		</div>
-
 
 		<div id="body">
 			<TMPL_LOOP Items>
@@ -260,30 +252,32 @@
 
 		</div>		
 
-		<!-- Start of Google Analytics Code -->
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-7686552-1");
-pageTracker._trackPageview();
-} catch(err) {}</script>
-               <!-- End of Google Analytics Code -->
+<!-- Start of Google Analytics Code -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6DFX4VKP1X"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-<!-- Piwik -->
-<script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://istatistik.linux.org.tr/" : "http://istatistik.linux.org.tr/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 6);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
-</script><noscript><p><img src="http://istatistik.linux.org.tr/piwik.php?idsite=6" style="border:0" alt="" /></p></noscript>
-<!-- End Piwik Tracking Code --> 
+  gtag('config', 'G-6DFX4VKP1X');
+</script>
+<!-- End of Google Analytics Code -->
+
+<!-- Matomo -->
+<script>
+  var _paq = window._paq = window._paq || [];
+  /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//istatistik.linux.org.tr/";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '5']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<!-- End Matomo Code -->
 
 	</body>
 </html>
