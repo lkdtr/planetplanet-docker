@@ -20,7 +20,7 @@ ENV LC_ALL tr_TR.UTF-8
 
 # Download planetplanet
 RUN mkdir /planetplanet && \
-    curl -k https://codeload.github.com/bmericc/planetplanet/tar.gz/refs/tags/2.0 \
+    curl -k https://codeload.github.com/lkdtr/planetplanet/tar.gz/refs/tags/2.0 \
          -o /tmp/planetplanet.tar.gz && \
     tar xfzv /tmp/planetplanet.tar.gz --strip 1 -C /planetplanet && \
     rm -rfv /tmp/planetplanet.tar.gz && \
