@@ -6,3 +6,4 @@ services:
       - './gezegen:/planetplanet/gezegen'
     ports:
       - '8090:80'
+    restart: always
