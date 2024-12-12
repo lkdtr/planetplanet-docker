@@ -1,5 +1,5 @@
-FROM ubuntu:latest
-MAINTAINER Kaisar Arkhan (Yuki) <ykno@protonmail.com>
+FROM ubuntu:jammy
+MAINTAINER Bahri Meric Canli (bmericc) <bahri@bahri.info>
 
 ENV PLANET_VERSION=2.0 DEBIAN_FRONTEND=noninteractive TERM=dumb
 
