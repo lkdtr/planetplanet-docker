@@ -1,6 +1,7 @@
 version: '2'
 services:
   app:
+    hostname: planetplanet
     build: .
     volumes:
       - ./gezegen:/planetplanet/gezegen
