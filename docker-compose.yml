@@ -3,7 +3,11 @@ services:
   app:
     build: .
     volumes:
-      - './gezegen:/planetplanet/gezegen'
+      - ./gezegen:/planetplanet/gezegen
+      - ./gezegen-lkd:/planetplanet/gezegen-lkd
+      - ./gezegen-topluluk:/planetplanet/gezegen-topluluk
+      - ./gezegen-kisisel:/planetplanet/gezegen-kisisel
+      - ./gezegen-planet:/planetplanet/gezegen-planet
     ports:
       - '8090:80'
     restart: always
